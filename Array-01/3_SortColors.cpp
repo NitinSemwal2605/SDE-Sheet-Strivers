@@ -31,3 +31,16 @@ int main() {
 
     return 0;
 }
+
+
+/* Approach : 
+    1. Initialize three pointers: low, mid, and high.
+    2. low points to the next position for 0, mid is the current element, and high points to the last position for 2.
+    3. Iterate through the array:
+        - If nums[mid] is 0, swap it with nums[low], increment both low and mid.
+        - If nums[mid] is 1, just increment mid.
+        - If nums[mid] is 2, swap it with nums[high] and decrement high.
+    4. Continue until mid exceeds high.
+    5. The array is now sorted in place with all 0s, followed by 1s, and then 2s.
+*/
+
