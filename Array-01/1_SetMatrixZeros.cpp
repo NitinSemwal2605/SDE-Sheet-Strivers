@@ -48,3 +48,6 @@ int main() {
     }
     return 0;
 }
+
+// Time Complexity: O(n*m)
+// Space Complexity: O(n+m) for the row and column markers
