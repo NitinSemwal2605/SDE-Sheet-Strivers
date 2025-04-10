@@ -25,3 +25,10 @@ int main() {
     }
     return 0;
 }
+
+/*
+Approach:
+1. Transpose the matrix: Swap matrix[i][j] with matrix[j][i] for all i and j.
+2. Reverse each row of the transposed matrix to get the final rotated matrix.
+3. The time complexity is O(n^2) and the space complexity is O(1) since we are modifying the matrix in place.
+*/
