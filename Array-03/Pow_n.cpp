@@ -15,3 +15,12 @@ int main() {
     cout << myPow(x, n) << endl;
     return 0;
 }
+
+/*
+Approach:
+1. The problem is to calculate x raised to the power n (x^n).
+2. The function myPow takes a double x and an integer n as input.
+3. We initialize a variable ans to 1.0 to store the result.
+4. We use a for loop to multiply ans by x, n times.
+5. The final result is returned as the value of ans.
+*/
