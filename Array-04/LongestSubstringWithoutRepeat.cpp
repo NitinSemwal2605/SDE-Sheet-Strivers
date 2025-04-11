@@ -27,3 +27,12 @@ int main(){
     cout<<maxLen(arr)<<endl;
     return 0;
 }
+
+
+/*
+Approach : 1. Using HashMap
+           2. Store the sum of elements in the map and their index
+           3. If the sum is already present in the map, then we have found a subarray with sum 0
+           4. Update the answer with the maximum length of the subarray
+           5. Return the answer
+*/
