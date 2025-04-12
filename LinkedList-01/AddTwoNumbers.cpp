@@ -73,3 +73,16 @@ int main() {
 
     return 0;
 }
+
+
+/*
+Approach :
+1. Create a dummy node to simplify the process of adding nodes to the result list.
+2. Initialize a pointer to the dummy node and a carry variable to 0.
+3. Traverse both linked lists until both are null and there is no carry left.
+4. For each iteration, calculate the sum of the current digits and the carry.
+5. Create a new node with the value of sum % 10 and add it to the result list.
+6. Update the carry to sum / 10.
+7. Move to the next nodes in both linked lists.
+8. Return the next node of the dummy node as the head of the result list.
+*/
