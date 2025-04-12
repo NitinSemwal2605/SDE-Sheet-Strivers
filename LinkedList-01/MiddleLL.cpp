@@ -52,3 +52,13 @@ int main() {
 
     return 0;
 }
+
+
+/*
+Approach : 
+1. Initialize two pointers, slow and fast, both pointing to the head of the linked list.
+2. Move the slow pointer one step at a time and the fast pointer two steps at a time.
+3. When the fast pointer reaches the end of the list, the slow pointer will be at the middle.
+4. If the list has an even number of nodes, the slow pointer will point to the second middle node.
+5. Return the slow pointer as the middle node.
+*/
