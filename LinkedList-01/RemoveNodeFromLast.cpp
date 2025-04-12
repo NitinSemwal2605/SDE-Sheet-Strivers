@@ -53,3 +53,16 @@ int main() {
     printList(head);
     return 0;
 }
+
+
+/*
+Approach :
+1. Create a dummy node and point its next to the head of the linked list.
+2. Initialize two pointers, slow and fast, both pointing to the dummy node.
+3. Move the fast pointer n steps ahead.
+4. Move both slow and fast pointers until the fast pointer reaches the end of the list.
+5. The slow pointer will be pointing to the node before the one we want to remove.
+6. Update the next pointer of the slow node to skip the node to be removed.
+7. Return the next pointer of the dummy node as the new head of the linked list.
+8. Print the modified linked list.
+*/
