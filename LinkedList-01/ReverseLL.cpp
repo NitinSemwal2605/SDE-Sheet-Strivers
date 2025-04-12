@@ -55,3 +55,17 @@ int main() {
 
     return 0;
 }
+
+
+/*
+Approach :
+1. Initialize three pointers: prev, curr, and next.
+2. Set prev to NULL and curr to the head of the linked list.
+3. Iterate through the list until curr is NULL:
+   a. Store the next node (curr->next) in next.
+   b. Reverse the link by setting curr->next to prev.
+   c. Move prev and curr one step forward.
+4. When curr becomes NULL, prev will be the new head of the reversed list.
+5. Return prev as the new head of the reversed linked list.
+6. Print the reversed linked list.
+*/
