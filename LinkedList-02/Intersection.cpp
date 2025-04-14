@@ -37,3 +37,13 @@ int main() {
     cout << result->val << endl;
     return 0;
 }
+
+/*
+Approach :
+1. Initialize two pointers, a and b, to the heads of the two linked lists.
+2. Traverse both lists simultaneously. If a reaches the end of list A, redirect it to the head of list B. Similarly, if b reaches the end of list B, redirect it to the head of list A.
+3. Continue this process until a and b meet at the intersection point or both reach the end (NULL).
+4. If they meet, return the intersection node; otherwise, return NULL.
+Time Complexity: O(n)
+Space Complexity: O(1)
+*/
