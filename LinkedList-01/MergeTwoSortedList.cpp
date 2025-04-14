@@ -44,3 +44,13 @@ int main() {
     }
     return 0;
 }
+
+/*
+Approach :
+1. We will use recursion to merge the two lists.
+2. If one of the lists is empty, we return the other list.
+3. If the first node of list1 is smaller than or equal to the first node of list2, we set the next of list1 to the result of merging the next node of list1 with list2.
+4. Otherwise, we set the next of list2 to the result of merging list1 with the next node of list2.
+5. Finally, we return the merged list.
+6. The time complexity of this approach is O(n + m), where n and m are the lengths of the two lists.
+*/
