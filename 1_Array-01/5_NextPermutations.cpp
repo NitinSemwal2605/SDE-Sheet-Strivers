@@ -18,13 +18,13 @@ void nextPermutation(vector<int>& nums) {
     }
     // Find the next greater element to swap with nums[pivot]
     for(int i = n - 1; i > pivot; i--) {
-        if (nums[i] > nums[pivot]) {
+        if (nums[i] > nums[pivot]) { 
             swap(nums[i], nums[pivot]);
             break;
         }
     }
     // Reverse the elements after the pivot
-    reverse(nums.begin() + pivot + 1, nums.end());
+    reverse(nums.begin() + pivot + 1, nums.end()); 
 }
 
 int main() {
@@ -36,23 +36,4 @@ int main() {
     return 0;
 }
 
-/*
-Dry Run:
-Input: nums = [1, 2, 3]
-Output: nums = [1, 3, 2]
-
-step 1: Find the first decreasing element from the right so that we can swap it with the next greater element.
-        i = 1, nums[i] = 2, nums[i+1] = 3
-        i = 0, nums[i] = 1, nums[i+1] = 2
-        i = -1, no decreasing element found.
-step 2: Find the next greater element to swap with nums[i].
-        j = 2, nums[j] = 3, nums[i] = 1
-step 3: Swap nums[i] and nums[j].
-        nums = [3, 2, 1]
-step 4: Reverse the elements after i.
-        nums = [1, 3, 2]
-step 5: Return the result.
-
-for input : [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
-Output: [11, 12, 13, 14, 15, 16, 17, 18, 20, 19]
-*/
+/*Done */
