@@ -5,7 +5,7 @@ class Node {
 public:
     int data;
     Node* next;
-    Node* prev; 
+    Node* prev;
     Node(int value) {
         data = value;
         next = nullptr;
@@ -58,7 +58,7 @@ void insertAtPosition(Node*& head, Node*& tail, int position, int value) {
 
     newNode->next = current->next;
     newNode->prev = current;
-
+    
     if (current->next != nullptr) {
         current->next->prev = newNode; // Set the previous pointer of the next node
     } else {
