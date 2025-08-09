@@ -15,43 +15,34 @@ public:
 };
 
 vector<int> InOrder(Node* root) {
-    vector<int> result;
-    if (!root) return result;
+    stack <Node*> s;
+    stack<bool> visited;
+    s.push(root);
+    visited.push(0);
+    vector<int>ans;
 
-    stack<Node*> nodes;
-    stack<int> flag; // 0 = first time, 1 = visited
+    while (!s.empty()) {
+        Node *temp = s.top();
+        s.pop();
+        bool flag = visited.top();
+        visited.pop();
 
-    nodes.push(root);
-    flag.push(0);
-
-    while (!nodes.empty()) {
-        Node* curr = nodes.top();
-        int visit = flag.top();
-        nodes.pop();
-        flag.pop();
-
-        if (!curr) continue;
-
-        if (visit == 1) {
-            result.push_back(curr->data);
+        if(!flag){
+            if(temp->right) {
+                s.push(temp->right);
+                visited.push(0);
+            }
+            s.push(temp);
+            visited.push(1);
+            if(temp->left) {
+                s.push(temp->left);
+                visited.push(0);
+            }
         } else {
-            // Push in reverse order: right, self (visited), left
-            if (curr->right) {
-                nodes.push(curr->right);
-                flag.push(0);
-            }
-
-            nodes.push(curr);
-            flag.push(1); // Mark as visited
-
-            if (curr->left) {
-                nodes.push(curr->left);
-                flag.push(0);
-            }
+            ans.push_back(temp->data);
         }
     }
-
-    return result;
+    return ans;
 }
 
 int main() {

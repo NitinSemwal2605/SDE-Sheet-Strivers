@@ -62,3 +62,13 @@ int main() {
 
     return 0;
 }
+
+/*
+Approach:
+    1. Use a stack to keep track of nodes.
+    2. Start with the root node, push it onto the stack.
+    3. While the stack is not empty:
+        - Pop the top node from the stack and add its value to the result vector.
+        - Push its left child first, then its right child onto the stack.
+    4. Reverse the result vector to get the correct post-order traversal.
+*/

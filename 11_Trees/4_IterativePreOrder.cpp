@@ -54,3 +54,15 @@ int main() {
 
     return 0;
 }
+
+/*
+Approach :
+    1. Use a stack to keep track of nodes.
+    2. Start with the root node, push it onto the stack.
+    3. While the stack is not empty:
+        a. Pop the top node from the stack.
+        b. Add its value to the result vector.
+        c. Push the right child onto the stack (if it exists).
+        d. Push the left child onto the stack (if it exists).
+    4. Return the result vector containing the preorder traversal.
+*/
