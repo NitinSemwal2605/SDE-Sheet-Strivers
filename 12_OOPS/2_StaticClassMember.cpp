@@ -31,3 +31,10 @@ int main() {
 
     return 0;
 }
+
+/*
+Static Member Variables :
+    1. Shared among all objects of the class.
+    2. Can be accessed using the class name.
+    3. Initialized only once.
+*/

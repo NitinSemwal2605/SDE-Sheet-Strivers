@@ -38,3 +38,13 @@ int main() {
 
     return 0;
 }
+
+
+/*
+    Conclusion:
+    1. Arrays of objects can be created to manage multiple instances of a class.
+    2. Each object in the array can have its own state and behavior.
+    3. Array indexing is used to access individual objects.
+    4. Memory for the objects is allocated on the stack (for automatic arrays) or the heap (for dynamic arrays).
+    5. Objects in an array can be manipulated using loops for efficient processing.
+*/

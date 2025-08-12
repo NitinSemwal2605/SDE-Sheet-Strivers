@@ -4,7 +4,7 @@ using namespace std;
 class Time {
     int hours;
     int minutes;
-    public:
+public:
     void getData(int h, int m){
         hours = h;
         minutes = m;

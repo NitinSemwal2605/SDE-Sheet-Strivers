@@ -4,6 +4,7 @@ using namespace std;
 class Sample{
     int a;
     int b;
+    
     public:
     void setData(int x, int y) {
         a = x;
@@ -33,3 +34,10 @@ int main() {
 
     return 0;
 }
+
+/*
+    Conclusion:
+    1. Friend functions can access private and protected members of a class.
+    2. They are not members of the class but have access to its private data.
+    3. Useful for operator overloading and when two or more classes need to work together.
+*/

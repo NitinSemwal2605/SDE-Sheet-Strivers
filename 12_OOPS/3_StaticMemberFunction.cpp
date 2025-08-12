@@ -13,7 +13,7 @@ public:
         cout << "Code: " << code << endl;
     }
 
-    static void showCount(void){ // Static member function
+    static void showCount(void){ // Static member function - can be called without an object
         cout << "Count: " << count << endl;
     }
 };
@@ -35,3 +35,10 @@ int main(){
 
     return 0;
 }
+
+/*
+Static Member Functions:
+1. Belong to the class rather than any object.
+2. Can access static data members directly.
+3. Cannot access non-static data members or member functions.
+*/

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class B;
+class B; // Forward declaration of class B
 
 class A {
     int x;

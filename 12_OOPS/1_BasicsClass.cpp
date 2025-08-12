@@ -8,8 +8,7 @@ class item{
     int count;
 
 public:
-    void cnt()
-    {
+    void cnt(){
         count = 0;
     }
     void getdata(void);
@@ -87,3 +86,15 @@ int main(){
 
     return 0;
 }
+
+
+/*
+    Conclusion:
+    1. Classes are user-defined data types that represent real-world entities.
+    2. They encapsulate data and functions that operate on that data.
+    3. Objects are instances of classes.
+    4. Constructors and destructors are special member functions for initialization and cleanup.
+    5. Access specifiers (public, private, protected) control access to class members.
+    6. Static members are shared among all instances of a class.
+    7. Member functions can be defined inside or outside the class definition by using the scope resolution operator (::).
+*/
