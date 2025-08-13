@@ -11,41 +11,45 @@ class Node{
         data = val;
         left = right = nullptr;
     }
-};
-
-void find(Node* root, int pos, int &left, int &right) {
-    if (!root) return;
-    left = min(left, pos);
-    right = max(right, pos);
-    find(root->left, pos - 1, left, right);
-    find(root->right, pos + 1, left, right);
-}
-
-void Bview(Node* root, int pos, vector<int> &ans, vector<int> &level, int depth) {
-    if (!root) return;
-
-    // If first time visiting this horizontal distance or at greater depth
-    if (depth > level[pos]) {
-        level[pos] = depth;
-        ans[pos] = root->data;
-    }
-
-    Bview(root->left, pos - 1, ans, level, depth + 1);
-    Bview(root->right, pos + 1, ans, level, depth + 1);
-}
+}; 
 
 vector<int> BottomView(Node* root) {
-    int left = 0, right = 0;
-    find(root, 0, left, right);
+    if (!root) return {};
 
-    vector<int> ans(right - left + 1);
-    vector<int> level(right - left + 1, INT_MIN);
+    // Map to store the bottom view
+    map<int, int> mpp;
+    queue<pair<Node*, int>> q; // Pair of Node and its horizontal distance from root
 
-    Bview(root, -left, ans, level, 0);
-    return ans;
+    q.push({root, 0});
+
+    while (!q.empty()) {
+        pair<Node*, int> frontPair = q.front();
+        Node* node = frontPair.first;
+        int hd = frontPair.second; // horizontal distance
+        q.pop();
+
+        // Update the bottom view map
+        mpp[hd] = node->data;
+
+        // Push left child with horizontal distance - 1
+        if (node->left) {
+            q.push({node->left, hd - 1});
+        }
+        // Push right child with horizontal distance + 1
+        if (node->right) {
+            q.push({node->right, hd + 1});
+        }
+    }
+
+    vector<int> result;
+    for (map<int, int>::iterator it = mpp.begin(); it != mpp.end(); ++it) {
+        result.push_back(it->second);
+    }
+
+    return result;
 }
 
-int main() {
+int main(){
     Node* root = new Node(1);
     root->left = new Node(2);
     root->right = new Node(3);

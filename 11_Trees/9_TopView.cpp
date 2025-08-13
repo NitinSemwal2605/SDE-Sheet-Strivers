@@ -32,6 +32,7 @@ vector<int> TopView(Node* root){
 
     vector<int> ans (right - left + 1);
     vector<bool> filled (right - left + 1, 0);
+    
     queue<Node*>q;
     queue<int> index;
     q.push(root);
