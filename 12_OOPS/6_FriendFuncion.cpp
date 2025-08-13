@@ -10,7 +10,7 @@ class Sample{
         a = x;
         b = y;
     }
-    friend float mean(Sample s1, Sample s2); // Friend function declaration
+    friend float mean(Sample s1, Sample s2); // Friend function is used to access private members.
 };
 
 float mean(Sample s1, Sample s2) {
