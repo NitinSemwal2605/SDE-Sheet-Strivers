@@ -4,8 +4,7 @@ using namespace std;
 class Sample{
     int a;
     int b;
-    
-    public:
+public:
     void setData(int x, int y) {
         a = x;
         b = y;

@@ -39,6 +39,6 @@ int main(){
 /*
 Static Member Functions:
 1. Belong to the class rather than any object.
-2. Can access static data members directly.
-3. Cannot access non-static data members or member functions.
+2. Can access static data members directly means the function can be called without creating an object.
+3. Cannot access non-static data members or member functions means they can only access static members.
 */
