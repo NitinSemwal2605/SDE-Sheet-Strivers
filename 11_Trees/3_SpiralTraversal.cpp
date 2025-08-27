@@ -72,7 +72,7 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         for (int i = 0; i < size; i++) {
             TreeNode* curr = q.front();
             q.pop();
-            int index = leftToRight ? i : (size - 1 - i); 
+            int index = leftToRight ? i : (size - 1 - i);
             level[index] = curr->val;
 
             if (curr->left) q.push(curr->left);
@@ -83,4 +83,7 @@ vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
     }
     return result;
 }
+
+
+Are Both Spiral and ZigZag One Questions Or different !? 
 */

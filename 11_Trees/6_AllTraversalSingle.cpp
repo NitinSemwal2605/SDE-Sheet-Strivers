@@ -18,7 +18,7 @@ vector<vector<int>> PreInPost(Node* root) {
         return {pre, in, post};  // Return empty vectors if root is null
     }
 
-    stack<pair<Node*, int>> st;
+    stack<pair<Node*, int>> st; // <Node*, stage> (Stage means 1: Preorder, 2: Inorder, 3: Postorder)
     st.push({root, 1});
 
     while (!st.empty()) {

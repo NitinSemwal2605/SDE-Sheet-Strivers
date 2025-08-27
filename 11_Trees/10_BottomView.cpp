@@ -11,42 +11,36 @@ class Node{
         data = val;
         left = right = nullptr;
     }
-}; 
+};
 
 vector<int> BottomView(Node* root) {
-    if (!root) return {};
-
-    // Map to store the bottom view
-    map<int, int> mpp;
-    queue<pair<Node*, int>> q; // Pair of Node and its horizontal distance from root
+    vector<int> ans;
+    if(!root) return ans;
+    map<int,int> mpp;
+    queue<pair<Node*,int>> q;
 
     q.push({root, 0});
-
-    while (!q.empty()) {
-        pair<Node*, int> frontPair = q.front();
-        Node* node = frontPair.first;
-        int hd = frontPair.second; // horizontal distance
+    while(!q.empty()){
+        pair<Node*,int> temp = q.front();
+        Node* curr = temp.first;
+        int hd = temp.second;
         q.pop();
 
-        // Update the bottom view map
-        mpp[hd] = node->data;
+        mpp[hd] = curr->data;
 
-        // Push left child with horizontal distance - 1
-        if (node->left) {
-            q.push({node->left, hd - 1});
+        if (curr->left) {
+            q.push({curr->left, hd - 1});
         }
-        // Push right child with horizontal distance + 1
-        if (node->right) {
-            q.push({node->right, hd + 1});
+        if (curr->right) {
+            q.push({curr->right, hd + 1});
         }
     }
 
-    vector<int> result;
-    for (map<int, int>::iterator it = mpp.begin(); it != mpp.end(); ++it) {
-        result.push_back(it->second);
+    for (auto it : mpp) {
+        ans.push_back(it.second);
     }
 
-    return result;
+    return ans;
 }
 
 int main(){
